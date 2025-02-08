@@ -1,0 +1,54 @@
+
+.questionaire-text{ /*this is for all forms and questions*/
+    font-size: 10px;
+    color: black;
+}
+
+.border-flex {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.border-container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 500px;
+}
+
+
+
+.border-boxes{
+    border-style: solid;
+    border-color: #008080;
+    border-width: 5px;
+    padding: 10px;
+    margin: 10px;
+    font-family: cursive; 
+    word-wrap: break-word;
+    background-color: lightblue;
+    color: black;
+    right:20px;
+    top: 50px;
+    text-align : center;
+
+}
+
+p.hidden-messages{
+    font-size: 8px;
+    color: grey;
+
+}
+
+.image-container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 500px;
+}
+.image{
+    position: absolute;
+    left: 0;
+    
+
+}
