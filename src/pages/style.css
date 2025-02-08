@@ -52,3 +52,8 @@ p.hidden-messages{
     
 
 }
+
+.box-shift-down {
+    margin-top: 100px;
+    /*for the header of order form*/
+}
