@@ -1,14 +1,13 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
-import Header from '../Header.jsx'
-
-
 import "./style.css";
 import Header from '../Header';
 
 function Home() {
     //const [count, setCount] = useState(0)
     return (
+    <>
+        <Header></Header>
         <div className='h-[100vh]'>
             <div className='flex flex-col'>
                 {/* Header */}
@@ -45,6 +44,7 @@ function Home() {
          </div>
     </div>
         </div>
+    </>
 
     );
 }
