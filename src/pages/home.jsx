@@ -4,6 +4,7 @@ import Header from '../Header.jsx'
 
 
 import "./style.css";
+import Header from '../Header';
 
 function Home() {
     //const [count, setCount] = useState(0)
