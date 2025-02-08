@@ -45,8 +45,8 @@ function OrderForm() {
         console.log(user.zip);
         console.log(user.email);
         console.log(user.birthday);
-        sessionStorage.setItem('User', user);
-        sessionStorage.setItem('Situation', situation);
+        sessionStorage.setItem('User', JSON.stringify(user));
+        sessionStorage.setItem('Situation', JSON.stringify(situation));
 
     };
     return (
