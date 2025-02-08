@@ -13,6 +13,7 @@ function App() {
   const [count, setCount] = useState(0)
   return (
       <>
+        
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home/>} />
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
             </Routes>
         </BrowserRouter>
+        footer
       </>
 
   );
