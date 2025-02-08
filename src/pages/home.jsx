@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import "./style.css";
+import Header from '../Header';
 
 function Home() {
     //const [count, setCount] = useState(0)
