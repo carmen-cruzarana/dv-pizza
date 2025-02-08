@@ -36,8 +36,8 @@ function OrderForm() {
         console.log(user.address2);
         console.log(user.birthday);
         console.log(user.number);
-        sessionStorage.setItem('User', user);
-        sessionStorage.setItem('Situation', situation);
+        sessionStorage.setItem('User', JSON.stringify(user));
+        sessionStorage.setItem('Situation', JSON.stringify(situation));
 
     };
     return (
