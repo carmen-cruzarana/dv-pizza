@@ -22,7 +22,7 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
             </Routes>
         </BrowserRouter>
-        footer
+      
       </>
 
   );
