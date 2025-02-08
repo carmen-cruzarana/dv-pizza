@@ -14,6 +14,11 @@ function Cart() {
                    Delivery Information<br />{storedUser.firstName} {storedUser.lastName} <br /> {storedUser.number}<br />{storedUser.address1} <br />{storedUser.address2}
                 </p>
             </div>
+            <div>
+                <p>
+                   Delivery Information<br />{storedUser.firstName} {storedUser.lastName} <br /> {storedUser.number}<br />{storedUser.address1} <br />{storedUser.address2}
+                </p>
+            </div>
         </>
 
     );
