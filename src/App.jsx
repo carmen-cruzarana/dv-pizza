@@ -10,7 +10,7 @@ import Menu from './pages/menu'
 import Cart from './pages/cart'
 
 function App() {
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0)
   return (
       <>
         
@@ -22,7 +22,6 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
             </Routes>
         </BrowserRouter>
-        footer
       </>
 
   );
