@@ -6,11 +6,14 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Pages](#pages)
+- [Education](#education)
 
 ## Purpose
-Our project is a helpline hotline cleverly disguised as a pizza ordering website, designed to provide a discreet and accessible way for individuals in abusive situations to seek help. Inspired by real incidents where domestic violence victims called 911 and pretended to order pizza to signal for assistance, we aimed to create a digital alternative for those who may not be able to speak on the phone.
+Our project is a hotline cleverly disguised as a pizza ordering website, designed to provide a discreet and accessible way for individuals in abusive situations to seek help. Inspired by real incidents where domestic violence victims called 911 and pretended to order pizza to signal for assistance, we aimed to create a digital alternative for those who may not be able to speak on the phone.
 
-Through our system, each pizza option and topping selection corresponds to specific information about the user's situation, allowing them to communicate their needs without alerting their abuser. Our goal is to ensure that anyone in need has a safe, covert, and effective way to access support and escape dangerous environments. 
+Through our system, each pizza option and topping selection corresponds to specific information about the user's situation, allowing them to communicate their needs without alerting their abuser. Our goal is to ensure that anyone in need has a safe, covert, and effective way to access support and escape dangerous environments.
+
+We recognize that seeking help can often be unsafe and challenging, particularly for women and marginalized communities. Our team is deeply committed to providing a secure and accessible platform that ensures individuals receive the necessary support to remove themselves from dangerous situations.
 
 ## Installation
 
@@ -91,4 +94,13 @@ The following commands will be to run the front-end or back-end scripts:
 2. Menu Page - The menu page presents various pizza options and toppings, each secretly corresponding to specific details about the user’s situation. When a user hovers over an item, a tooltip reveals what the selection represents for law enforcement. For example, selecting a thin crust pizza may indicate that children are involved. This feature enables victims to discreetly communicate their circumstances in a structured manner.
 3. Order Page - The order page allows users to finalize their selections, providing crucial details to authorities. Here, users can enter their address, email, and date of birth, helping law enforcement build a profile and respond effectively. The system ensures that all provided information is securely relayed to the appropriate authorities while maintaining the disguise of a standard online order form.
 4. Cart Page- TBD
-   
+
+
+## Education
+This team is composed of first-time hackathon participants with limited coding experience. Throughout the event, they faced numerous challenges, particularly in strategizing a project that was both feasible and impactful given their skill level.
+
+Once the project was decided, team members took on the challenge of learning HTML, CSS, and JSX, despite having little to no prior experience with these technologies. They leveraged resources such as mentorship from experienced mentors, workshops and online platforms like W3Schools to rapidly acquire the necessary skills.
+
+Through this hackathon, the team gained invaluable hands-on experience in web development, problem-solving, and collaboration. This experience has not only strengthened their technical abilities but has also prepared them for future academic pursuits, internships, and eventual careers in the tech industry.
+
+
