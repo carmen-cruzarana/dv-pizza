@@ -5,7 +5,7 @@ import Header from '../Header';
 function Cart() {
     //const [count, setCount] = useState(0)
     const storedUser = JSON.parse(sessionStorage.getItem('User'));
-    const storedSituation = JSON.parse(sessionStorage.getItem('Situation'));
+    // const storedSituation = JSON.parse(sessionStorage.getItem('Situation'));
     return (
         <>
             <Header/>
