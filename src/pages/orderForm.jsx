@@ -73,10 +73,10 @@ export default function OrderForm() {
 
                 <Header/>
                 <div>
-                    <h2>
+                    <h1>
                         Delivery Information
-                    </h2>
-
+                    </h1>
+                    <br />
                 </div>
 
                 <div>
@@ -194,50 +194,53 @@ export default function OrderForm() {
         </div>
             <div className="border-boxes">
                 <div>
-                    <h2>
+                    <h1>
                         Customize Your Order
-                    </h2>
+                    </h1>
+                    <br />
                 </div>
 
                 <div>
                     <div>
+
+
                         <label>
-                            Small
+                            Size: &ensp;Small&nbsp;
                             <input
                                 type="radio"
-                                value={"small"}
-                                checked ={pizzaSize == "small"}
+                                value={"Small"}
+                                checked ={pizzaSize == "Small"}
                                 onChange={(e) => {
 
-                                    setPizzaSize("small")
+                                    setPizzaSize("Small")
                                 }}
                             />
                         </label>
                         <label>
-                            Medium
+                            &ensp;Medium&nbsp;
                             <input
                                 type="radio"
-                                value={"medium"}
-                                checked ={pizzaSize == "medium"}
+                                value={"Medium"}
+                                checked ={pizzaSize == "Medium"}
                                 onChange={(e) => {
-                                    setPizzaSize("medium")
+                                    setPizzaSize("Medium")
                                 }}
                             />
                         </label>
                         <label>
-                            Large
+                            &ensp;Large&nbsp;
                             <input
                                 //
                                 type="radio"
-                                value={"large"}
-                                checked = {pizzaSize == "large"}
+                                value={"Large"}
+                                checked = {pizzaSize == "Large"}
                                 onChange={(e) => {
-                                    setPizzaSize("large")
+                                    setPizzaSize("Large")
                                 }}
                             />
                         </label>
                         <label>
-                            XL
+                            &ensp;XL&nbsp;
                             <input
                                 // Size: small, medium, large, xl (radio)
                                 type="radio"
@@ -252,7 +255,7 @@ export default function OrderForm() {
             {/*crust*/}
                     <div>
                         <label>
-                            Hand-Tossed
+                            Crust: &ensp;Hand-Tossed&nbsp;
                             <input
                                 // crust: Hand-Tossed, Thin, Stuffed (radio)
                                 type="radio"
@@ -266,7 +269,7 @@ export default function OrderForm() {
                         </label>
 
                         <label>
-                            Thin
+                            &ensp;Thin&nbsp;
                             <input
                                 type="radio"
                                 value={"Thin"}
@@ -278,7 +281,7 @@ export default function OrderForm() {
                         </label>
 
                         <label>
-                            Stuffed
+                            &ensp;Stuffed&nbsp;
                             <input
                                 type="radio"
                                 value={"Stuffed"}
@@ -292,7 +295,7 @@ export default function OrderForm() {
                     {/*sauce*/}
                     <div>
                         <label>
-                            Classic Red
+                            Sauce:&ensp;Classic Red&nbsp;
                             <input
                                 type="radio"
                                 value={"Classic Red"}
@@ -303,7 +306,7 @@ export default function OrderForm() {
                             />
                         </label>
                         <label>
-                            Pesto
+                            &ensp;Pesto&nbsp;
                             <input
                                 type="radio"
                                 value={"Pesto"}
@@ -314,7 +317,7 @@ export default function OrderForm() {
                             />
                         </label>
                         <label>
-                            Alfredo
+                            &ensp;Alfredo&nbsp;
                             <input
                                 type="radio"
                                 value={"Alfredo"}
@@ -325,7 +328,7 @@ export default function OrderForm() {
                             />
                         </label>
                         <label>
-                            Spicy
+                            &ensp;Spicy&nbsp;
                             <input
                                 type="radio"
                                 value={"Spicy"}
@@ -340,7 +343,7 @@ export default function OrderForm() {
 
                     <div>
                         <label>
-                            Peperoni
+                            Meat:&ensp;Peperoni&nbsp;
                             <input type="checkbox"
                                    value={"Peperoni"}
                                    checked = {meatType.Peperoni}
@@ -352,7 +355,7 @@ export default function OrderForm() {
                                    }}/>
                         </label>
                         <label>
-                            Sausage
+                            &ensp;Sausage&nbsp;
                             <input type="checkbox"
                                    value={"Sausage"}
                                    checked = {meatType.Sausage}
@@ -364,7 +367,7 @@ export default function OrderForm() {
                                    }}/>
                         </label>
                         <label>
-                            Chicken
+                            &ensp;Chicken&nbsp;
                             <input type="checkbox"
                                    value={"Chicken"}
                                    checked = {meatType.Chicken}
@@ -376,7 +379,7 @@ export default function OrderForm() {
                                    }}/>
                         </label>
                         <label>
-                            Veggie
+                            &ensp;Veggie&nbsp;
                             <input type="checkbox"
                                    value={"Veggie "}
                                    checked = {meatType.Veggie }
@@ -389,7 +392,7 @@ export default function OrderForm() {
                         </label>
                     </div>
                 </div>
-
+                <br />
                 <Link to="/cart">
                     <button onClick={handleSubmit}>
                         Add to Cart
