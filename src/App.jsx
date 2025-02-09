@@ -1,9 +1,10 @@
-// import './App.css'
+import './App.css'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from './pages/home'
 import OrderForm from './pages/orderForm'
 import Menu from './pages/menu'
 import Cart from './pages/cart'
+
 
 function App() {
   return (
