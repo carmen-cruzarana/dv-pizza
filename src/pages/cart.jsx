@@ -51,19 +51,19 @@ function Cart() {
                 message+= "Child or Children\n";
             }
             message += "Weapons Known: ";
-            if (storedSituation.meat == "Pepperoni"){
-                message += "Armed \n";
+            if (storedSituation.meat.Peperoni == true){
+                message += "Gun ";
             }
-            else if (storedSituation.meat == "Sausage"){
-                message += "Knife \n";
+            if (storedSituation.meat.Sausage){
+                message += "Knife ";
             }
-            else if (storedSituation.meat == "Chicken"){
-                message+= "Other\n";
+            if (storedSituation.meat.Chicken){
+                message+= "Other ";
             }
-            else if (storedSituation.meat == "Veggie" || storedSituation.meat == ""){
-                message+= "None Specified \n";
+            if (storedSituation.meat.Veggie){
+                message+= "None Specified ";
             }
-            message += "Discretion Desired: ";
+            message += "\nDiscretion Desired: ";
             if (storedSituation.sauce == "Classic Red"){
                 message += "No Lights/Sirens \n";
             }
@@ -120,8 +120,15 @@ function Cart() {
                     Order Details:<br/>
                     </h2>
                 <p>  {storedSituation?.size && '1 ' + storedSituation?.size + ' Divine Pizza'}  <br />
-                    {storedSituation?.crust} <br/> {storedSituation?.sauce}<br/> {storedSituation?.meat}
+                    {storedSituation?.crust} <br/> {storedSituation?.sauce}<br/> {storedSituation.meat.Peperoni && 'Peperoni '}
+                    {storedSituation.meat.Chicken && 'Chicken '}<br />{storedSituation.meat.Sausage && 'Sausage '}
+                    {storedSituation.meat.Veggie && 'Veggie'}<br />
                 </p>
+                <p>
+                    ~ Discount Applied ~ <br />
+                    Total: $0.00
+                </p>
+
                 <button onClick={handlePurchase} style={{
                     backgroundColor: '#881ec2',
                     color: 'white',

@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import Header from "../Header";
 import "./style.css";
@@ -17,52 +17,30 @@ export default function OrderForm() {
         birthday: "",
 
     });
-    const[situation, setSituation] = useState({
-        size: "",
+
+    const [situation, setSituation] = useState({
         crust: "",
         sauce: "",
-        meat: false,
+        size: "",
+        meat: {
+            Peperoni: false,
+            Sausage: false,
+            Chicken: false,
+            Veggie: false
+        }
     })
 
 
     const createUser = (type, currValue) =>{
         setUser({...user, [type]: currValue});
     };
-    const createSituation = (type, currValue) =>{
-        setSituation({...user, [type]: currValue});
-    };
 
     const handleSubmit = () =>{
-        console.log(user.firstName);
-        console.log(user.lastName);
-        console.log(user.number);
-        console.log(user.address);
-        console.log(user.city);
-        console.log(user.state);
-        console.log(user.zip);
-        console.log(user.email);
-        console.log(user.birthday);
-        createSituation('size', pizzaSize);
-        createSituation('crust', pizzaCrust);
-        createSituation('sauce', pizzaSauce);
-        createSituation('meat', meatType);
+        console.log("Situation", situation)
         sessionStorage.setItem('User', JSON.stringify(user));
         sessionStorage.setItem('Situation', JSON.stringify(situation));
 
     };
-
-    const [pizzaSize, setPizzaSize] = useState()
-
-    const [pizzaCrust, setPizzaCrust] = useState()
-
-    const [pizzaSauce, setPizzaSauce] = useState()
-
-    const [meatType,setMeatType] = useState({
-        Peperoni: false,
-        Sausage: false,
-        Chicken: false,
-        Veggie: false
-    })
 
     return (
         <>
@@ -209,10 +187,15 @@ export default function OrderForm() {
                             <input
                                 type="radio"
                                 value={"Small"}
-                                checked ={pizzaSize == "Small"}
+                                checked = {situation.size === "Small"}
                                 onChange={(e) => {
 
-                                    setPizzaSize("Small")
+                                    if (e.target.checked) {
+                                        setSituation((prev) => ({
+                                            ...prev,
+                                            size: "Small"
+                                        }))
+                                    }
                                 }}
                             />
                         </label>
@@ -221,9 +204,15 @@ export default function OrderForm() {
                             <input
                                 type="radio"
                                 value={"Medium"}
-                                checked ={pizzaSize == "Medium"}
+                                checked ={situation.size === "Medium"}
                                 onChange={(e) => {
-                                    setPizzaSize("Medium")
+
+                                    if (e.target.checked) {
+                                        setSituation((prev) => ({
+                                            ...prev,
+                                            size: "Medium"
+                                        }))
+                                    }
                                 }}
                             />
                         </label>
@@ -233,9 +222,14 @@ export default function OrderForm() {
                                 //
                                 type="radio"
                                 value={"Large"}
-                                checked = {pizzaSize == "Large"}
+                                checked = {situation.size === "Large"}
                                 onChange={(e) => {
-                                    setPizzaSize("Large")
+                                    if (e.target.checked) {
+                                        setSituation((prev) => ({
+                                            ...prev,
+                                            size: "Large"
+                                        }))
+                                    }
                                 }}
                             />
                         </label>
@@ -245,9 +239,14 @@ export default function OrderForm() {
                                 // Size: small, medium, large, xl (radio)
                                 type="radio"
                                 value={"XL"}
-                                checked = {pizzaSize == "XL"}
+                                checked = {situation.size === "XL"}
                                 onChange={(e) => {
-                                    setPizzaSize("XL")
+                                    if (e.target.checked) {
+                                        setSituation((prev) => ({
+                                            ...prev,
+                                            size: "XL"
+                                        }))
+                                    }
                                 }}
                             />
                         </label>
@@ -260,10 +259,15 @@ export default function OrderForm() {
                                 // crust: Hand-Tossed, Thin, Stuffed (radio)
                                 type="radio"
                                 value={"Hand-Tossed"}
-                                checked ={pizzaCrust == "Hand-Tossed"}
+                                checked ={situation.crust === "Hand-Tossed"}
                                 onChange={(e) => {
 
-                                    setPizzaCrust("Hand-Tossed")
+                                    if (e.target.checked) {
+                                        setSituation((prev) => ({
+                                            ...prev,
+                                            crust: "Hand-Tossed"
+                                        }))
+                                    }
                                 }}
                             />
                         </label>
@@ -273,9 +277,14 @@ export default function OrderForm() {
                             <input
                                 type="radio"
                                 value={"Thin"}
-                                checked ={pizzaCrust == "Thin"}
+                                checked ={situation.crust === "Thin"}
                                 onChange={(e) => {
-                                    setPizzaCrust("Thin")
+                                    if (e.target.checked) {
+                                        setSituation((prev) => ({
+                                            ...prev,
+                                            crust: "Thin"
+                                        }))
+                                    }
                                 }}
                             />
                         </label>
@@ -285,9 +294,14 @@ export default function OrderForm() {
                             <input
                                 type="radio"
                                 value={"Stuffed"}
-                                checked = {pizzaCrust == "Stuffed"}
+                                checked = {situation.crust === "Stuffed"}
                                 onChange={(e) => {
-                                    setPizzaCrust("Stuffed")
+                                    if (e.target.checked) {
+                                        setSituation((prev) => ({
+                                            ...prev,
+                                            size: "Stuffed"
+                                        }))
+                                    }
                                 }}
                             />
                         </label>
@@ -299,9 +313,14 @@ export default function OrderForm() {
                             <input
                                 type="radio"
                                 value={"Classic Red"}
-                                checked ={pizzaSauce == "Classic Red"}
+                                checked ={situation.sauce === "Classic Red"}
                                 onChange={(e) => {
-                                    setPizzaSauce("Classic Red")
+                                    if (e.target.checked) {
+                                        setSituation((prev) => ({
+                                            ...prev,
+                                            sauce: "Classic Red"
+                                        }))
+                                    }
                                 }}
                             />
                         </label>
@@ -310,9 +329,14 @@ export default function OrderForm() {
                             <input
                                 type="radio"
                                 value={"Pesto"}
-                                checked ={pizzaSauce == "Pesto"}
+                                checked ={situation.sauce === "Pesto"}
                                 onChange={(e) => {
-                                    setPizzaSauce("Pesto")
+                                    if (e.target.checked) {
+                                        setSituation((prev) => ({
+                                            ...prev,
+                                            sauce: "Pesto"
+                                        }))
+                                    }
                                 }}
                             />
                         </label>
@@ -321,9 +345,14 @@ export default function OrderForm() {
                             <input
                                 type="radio"
                                 value={"Alfredo"}
-                                checked = {pizzaSauce == "Alfredo"}
+                                checked = {situation.sauce === "Alfredo"}
                                 onChange={(e) => {
-                                    setPizzaSauce("Alfredo")
+                                    if (e.target.checked) {
+                                        setSituation((prev) => ({
+                                            ...prev,
+                                            sauce: "Alfredo"
+                                        }))
+                                    }
                                 }}
                             />
                         </label>
@@ -332,9 +361,14 @@ export default function OrderForm() {
                             <input
                                 type="radio"
                                 value={"Spicy"}
-                                checked = {pizzaSauce == "Spicy"}
+                                checked = {situation.sauce === "Spicy"}
                                 onChange={(e) => {
-                                    setPizzaSauce("Spicy")
+                                    if (e.target.checked) {
+                                        setSituation((prev) => ({
+                                            ...prev,
+                                            sauce: "Spicy"
+                                        }))
+                                    }
                                 }}
                             />
                         </label>
@@ -346,53 +380,66 @@ export default function OrderForm() {
                             Meat:&ensp;Peperoni&nbsp;
                             <input type="checkbox"
                                    value={"Peperoni"}
-                                   checked = {meatType.Peperoni}
+                                   checked = {situation.meat.Peperoni}
                                    onChange={(e) => {
-                                       setMeatType({
-                                           ...meatType,
-                                           Peperoni: e.target.checked
-                                       })
+                                           setSituation((prev) => ({
+                                               ...prev,
+                                               meat: {
+                                                   ...prev.meat,
+                                                   Peperoni: e.target.checked
+                                               }
+                                           }))
                                    }}/>
                         </label>
                         <label>
                             &ensp;Sausage&nbsp;
                             <input type="checkbox"
                                    value={"Sausage"}
-                                   checked = {meatType.Sausage}
+                                   checked = {situation.meat.Sausage}
                                    onChange={(e) => {
-                                       setMeatType({
-                                           ...meatType,
-                                           Sausage: e.target.checked
-                                       })
+                                       setSituation((prev) => ({
+                                           ...prev,
+                                           meat: {
+                                               ...prev.meat,
+                                               Sausage: e.target.checked
+                                           }
+                                       }))
                                    }}/>
                         </label>
                         <label>
                             &ensp;Chicken&nbsp;
                             <input type="checkbox"
                                    value={"Chicken"}
-                                   checked = {meatType.Chicken}
+                                   checked = {situation.meat.Chicken}
                                    onChange={(e) => {
-                                       setMeatType({
-                                           ...meatType,
-                                           Chicken: e.target.checked
-                                       })
+                                       setSituation((prev) => ({
+                                           ...prev,
+                                           meat: {
+                                               ...prev.meat,
+                                               Chicken: e.target.checked
+                                           }
+                                       }))
                                    }}/>
                         </label>
                         <label>
                             &ensp;Veggie&nbsp;
                             <input type="checkbox"
                                    value={"Veggie "}
-                                   checked = {meatType.Veggie }
+                                   checked = {situation.meat.Veggie }
                                    onChange={(e) => {
-                                       setMeatType({
-                                           ...meatType,
-                                           Veggie : e.target.checked
-                                       })
+                                       setSituation((prev) => ({
+                                           ...prev,
+                                           meat: {
+                                               ...prev.meat,
+                                               Veggie: e.target.checked
+                                           }
+                                       }))
                                    }}/>
                         </label>
                     </div>
                 </div>
                 <br />
+
                 <Link to="/cart">
                     <button onClick={handleSubmit}>
                         Add to Cart
