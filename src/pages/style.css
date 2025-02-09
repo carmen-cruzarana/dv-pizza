@@ -57,3 +57,8 @@ p.hidden-messages{
     margin-top: 100px;
     /*for the header of order form*/
 }
+.special-address{
+    a{
+    color: blue;
+    }
+}
