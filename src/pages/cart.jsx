@@ -83,6 +83,9 @@ function Cart() {
     return (
         <>
             <Header />
+
+
+                   
             <h1 style={{
                 margin:'100px auto',
                 paddingLeft:'50px',
@@ -133,6 +136,7 @@ function Cart() {
                 </button>
             </div>
         }
+        
 
         </>
 
