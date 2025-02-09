@@ -1,11 +1,18 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../Header';
+import "./style.css";
+import "../App.css";
 
 function Cart() {
     //const [count, setCount] = useState(0)
     const storedUser = JSON.parse(sessionStorage.getItem('User'));
-    //const storedSituation = JSON.parse(sessionStorage.getItem('Situation'));
+    const storedSituation = JSON.parse(sessionStorage.getItem('Situation'));
+    const handlePurchase = () =>{
+        console.log("submitted");
+    }
+
+
     return (
         <>
             <Header />
@@ -27,8 +34,7 @@ function Cart() {
                     Delivery Information<br/>
                 </h2>
                 <p>
-                    {storedUser.firstName} {storedUser.lastName} <br/> {storedUser.number}<br/>{storedUser.address1}
-                    <br/>{storedUser.address2}
+                    {storedUser.firstName} {storedUser.lastName} <br/> {storedUser.number}
                 </p>
                 <h2>
                     Order Details:<br/>
@@ -36,7 +42,7 @@ function Cart() {
                 <p>
                     Extra Large <br />Stuffed Crust <br/> Red Sauce<br/> Pepperoni, Sausage, Bacon
                 </p>
-                <button onClick={(handlePurchase) => {}} style={{
+                <button onClick={handlePurchase} style={{
                     backgroundColor: 'red',
                     color: 'white',
                     alignContent: 'center',
