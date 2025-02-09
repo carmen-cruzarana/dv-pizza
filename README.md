@@ -85,7 +85,7 @@ Follow the steps to install the project onto your system with your own branch.
      ```
 ## Usage
 
-The following commands will be to run the front-end or back-end scripts:
+The following commands will be to run the scripts:
 ``` npm run dev ```
 
 ## Pages
