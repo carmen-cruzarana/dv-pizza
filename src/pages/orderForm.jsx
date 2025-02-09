@@ -53,7 +53,7 @@ function OrderForm() {
         <>
             <div className="box-shift-down"></div>
 
-            <div className="border-boxes">
+            <div className="border-boxes ">
 
                 <Header/>
                 <div>

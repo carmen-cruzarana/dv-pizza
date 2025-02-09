@@ -4,7 +4,7 @@ import Home from './pages/home'
 import OrderForm from './pages/orderForm'
 import Menu from './pages/menu'
 import Cart from './pages/cart'
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"></link>
+
 
 
 function App() {
