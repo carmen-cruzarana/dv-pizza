@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { Link } from 'react-router-dom'
-// import Header from "../Header";
+import Header from "../Header";
 
 function OrderForm() {
     //Classes
@@ -42,7 +42,7 @@ function OrderForm() {
     };
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <div>
                 <p className = "text-4xl font-bold line-height: 500" >
                     Order Form: Delivery
