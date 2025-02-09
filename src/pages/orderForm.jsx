@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Header from "../Header";
 import "./style.css";
 
-function OrderForm() {
+export default function OrderForm() {
     //Classes
     const [user, setUser] = useState({
         firstName: "",
@@ -21,12 +21,10 @@ function OrderForm() {
         size: "",
         crust: "",
         sauce: "",
-        meat: "",
+        meat: false,
     })
 
-    // use state functions to update the user input as it comes in
-    // const [addedUser, confirmUser] = useState(false);
-    // const [addedsituation, confirmSituation] = useState(false);
+
     const createUser = (type, currValue) =>{
         setUser({...user, [type]: currValue});
     };
@@ -34,7 +32,6 @@ function OrderForm() {
         setSituation({...user, [type]: currValue});
     };
 
-    // triggers when user presses add to cart
     const handleSubmit = () =>{
         console.log(user.firstName);
         console.log(user.lastName);
@@ -45,27 +42,43 @@ function OrderForm() {
         console.log(user.zip);
         console.log(user.email);
         console.log(user.birthday);
+        createSituation('size', pizzaSize);
+        createSituation('crust', pizzaCrust);
+        createSituation('sauce', pizzaSauce);
+        createSituation('meat', meatType);
         sessionStorage.setItem('User', JSON.stringify(user));
         sessionStorage.setItem('Situation', JSON.stringify(situation));
 
     };
+
+    const [pizzaSize, setPizzaSize] = useState()
+
+    const [pizzaCrust, setPizzaCrust] = useState()
+
+    const [pizzaSauce, setPizzaSauce] = useState()
+
+    const [meatType,setMeatType] = useState({
+        Peperoni: false,
+        Sausage: false,
+        Chicken: false,
+        Veggie: false
+    })
+
     return (
         <>
-            <div className="box-shift-down"></div>
+
+            <div   className="box-shift-down"></div>
 
             <div className="border-boxes">
 
                 <Header/>
                 <div>
-                    <h2>
+                    <h1>
                         Delivery Information
-                    </h2>
-                    {/*<li><Link to="/orderForm">order form</Link></li>*/}
-                    {/*<li><Link to="/cart">cart</Link></li>*/}
-                    {/*<li><Link to="/menu">menu</Link></li>*/}
-                    {/*<li><Link to="/">home</Link></li>*/}
+                    </h1>
+                    <br />
                 </div>
-                {/*HTML for the input form*/}
+
                 <div>
                     <label>
                         Name:
@@ -97,12 +110,6 @@ function OrderForm() {
                         />
                     </label>
                 </div>
-                <div>
-                    <label>
-
-                    </label>
-                </div>
-
                 <div>
                     <label>
                         Address:
@@ -184,8 +191,208 @@ function OrderForm() {
                     </label>
                 </div>
                 {/*end of first box*/}
+        </div>
+            <div className="border-boxes">
+                <div>
+                    <h1>
+                        Customize Your Order
+                    </h1>
+                    <br />
+                </div>
+
+                <div>
+                    <div>
 
 
+                        <label>
+                            Size: &ensp;Small&nbsp;
+                            <input
+                                type="radio"
+                                value={"Small"}
+                                checked ={pizzaSize == "Small"}
+                                onChange={(e) => {
+
+                                    setPizzaSize("Small")
+                                }}
+                            />
+                        </label>
+                        <label>
+                            &ensp;Medium&nbsp;
+                            <input
+                                type="radio"
+                                value={"Medium"}
+                                checked ={pizzaSize == "Medium"}
+                                onChange={(e) => {
+                                    setPizzaSize("Medium")
+                                }}
+                            />
+                        </label>
+                        <label>
+                            &ensp;Large&nbsp;
+                            <input
+                                //
+                                type="radio"
+                                value={"Large"}
+                                checked = {pizzaSize == "Large"}
+                                onChange={(e) => {
+                                    setPizzaSize("Large")
+                                }}
+                            />
+                        </label>
+                        <label>
+                            &ensp;XL&nbsp;
+                            <input
+                                // Size: small, medium, large, xl (radio)
+                                type="radio"
+                                value={"XL"}
+                                checked = {pizzaSize == "XL"}
+                                onChange={(e) => {
+                                    setPizzaSize("XL")
+                                }}
+                            />
+                        </label>
+                    </div>
+            {/*crust*/}
+                    <div>
+                        <label>
+                            Crust: &ensp;Hand-Tossed&nbsp;
+                            <input
+                                // crust: Hand-Tossed, Thin, Stuffed (radio)
+                                type="radio"
+                                value={"Hand-Tossed"}
+                                checked ={pizzaCrust == "Hand-Tossed"}
+                                onChange={(e) => {
+
+                                    setPizzaCrust("Hand-Tossed")
+                                }}
+                            />
+                        </label>
+
+                        <label>
+                            &ensp;Thin&nbsp;
+                            <input
+                                type="radio"
+                                value={"Thin"}
+                                checked ={pizzaCrust == "Thin"}
+                                onChange={(e) => {
+                                    setPizzaCrust("Thin")
+                                }}
+                            />
+                        </label>
+
+                        <label>
+                            &ensp;Stuffed&nbsp;
+                            <input
+                                type="radio"
+                                value={"Stuffed"}
+                                checked = {pizzaCrust == "Stuffed"}
+                                onChange={(e) => {
+                                    setPizzaCrust("Stuffed")
+                                }}
+                            />
+                        </label>
+                    </div>
+                    {/*sauce*/}
+                    <div>
+                        <label>
+                            Sauce:&ensp;Classic Red&nbsp;
+                            <input
+                                type="radio"
+                                value={"Classic Red"}
+                                checked ={pizzaSauce == "Classic Red"}
+                                onChange={(e) => {
+                                    setPizzaSauce("Classic Red")
+                                }}
+                            />
+                        </label>
+                        <label>
+                            &ensp;Pesto&nbsp;
+                            <input
+                                type="radio"
+                                value={"Pesto"}
+                                checked ={pizzaSauce == "Pesto"}
+                                onChange={(e) => {
+                                    setPizzaSauce("Pesto")
+                                }}
+                            />
+                        </label>
+                        <label>
+                            &ensp;Alfredo&nbsp;
+                            <input
+                                type="radio"
+                                value={"Alfredo"}
+                                checked = {pizzaSauce == "Alfredo"}
+                                onChange={(e) => {
+                                    setPizzaSauce("Alfredo")
+                                }}
+                            />
+                        </label>
+                        <label>
+                            &ensp;Spicy&nbsp;
+                            <input
+                                type="radio"
+                                value={"Spicy"}
+                                checked = {pizzaSauce == "Spicy"}
+                                onChange={(e) => {
+                                    setPizzaSauce("Spicy")
+                                }}
+                            />
+                        </label>
+                    </div>
+                    {/*meat*/}
+
+                    <div>
+                        <label>
+                            Meat:&ensp;Peperoni&nbsp;
+                            <input type="checkbox"
+                                   value={"Peperoni"}
+                                   checked = {meatType.Peperoni}
+                                   onChange={(e) => {
+                                       setMeatType({
+                                           ...meatType,
+                                           Peperoni: e.target.checked
+                                       })
+                                   }}/>
+                        </label>
+                        <label>
+                            &ensp;Sausage&nbsp;
+                            <input type="checkbox"
+                                   value={"Sausage"}
+                                   checked = {meatType.Sausage}
+                                   onChange={(e) => {
+                                       setMeatType({
+                                           ...meatType,
+                                           Sausage: e.target.checked
+                                       })
+                                   }}/>
+                        </label>
+                        <label>
+                            &ensp;Chicken&nbsp;
+                            <input type="checkbox"
+                                   value={"Chicken"}
+                                   checked = {meatType.Chicken}
+                                   onChange={(e) => {
+                                       setMeatType({
+                                           ...meatType,
+                                           Chicken: e.target.checked
+                                       })
+                                   }}/>
+                        </label>
+                        <label>
+                            &ensp;Veggie&nbsp;
+                            <input type="checkbox"
+                                   value={"Veggie "}
+                                   checked = {meatType.Veggie }
+                                   onChange={(e) => {
+                                       setMeatType({
+                                           ...meatType,
+                                           Veggie : e.target.checked
+                                       })
+                                   }}/>
+                        </label>
+                    </div>
+                </div>
+                <br />
                 <Link to="/cart">
                     <button onClick={handleSubmit}>
                         Add to Cart
@@ -193,13 +400,6 @@ function OrderForm() {
                 </Link>
 
             </div>
-        </>
-    // <div class="border-boxes">
-    //
-    // </div>
+</>)
+            }
 
-
-    );
-}
-
-export default OrderForm

@@ -20,32 +20,32 @@ function Menu() {
         <Header/>
         <div class="image-row">
             <ul>
-                <li class="title">PIZZA CRUST</li>
-                <li>Thin Crust</li>
-                <li>Stuffed Crust</li>
-                <li>Thick Crust</li>
-                <li>Hand Tossed</li>
+                <li class="title" title="People Involved">PIZZA CRUST</li>
+                <li title="child involved">Thin Crust</li>
+                <li title="multiple people">Stuffed Crust</li>
+                <li title="one woman">Hand Tossed</li>
+                <li>Deep Dish</li>
             </ul>
             <ul>
-                <li class="title">SIZE</li>
-                <li>Extra Large</li>
-                <li>Large</li>
-                <li>Medium</li>
-                <li>Small</li>
+                <li class="title" title="severity">SIZE</li>
+                <li title="Extremely Urgent">Extra Large</li>
+                <li title="Urgent">Large</li>
+                <li title="Threat">Medium</li>
+                <li title="Standby">Small</li>
             </ul>
             <ul>
-                <li class="title">SAUCE</li>
-                <li>Red</li>
-                <li>Alfredo</li>
-                <li>Pesto</li>
-                <li>SPicy</li>
+                <li class="title" title="discretion">SAUCE</li>
+                <li title="no lights/sirens">Classic Red</li>
+                <li title="ambulance">Alfredo</li>
+                <li title="full lights/sirens">Pesto</li>
+                <li>Spicy</li>
             </ul>
             <ul>
-                <li class="title">MEAT/TOPPINGS</li>
-                <li>Pepperoni</li>
-                <li>Sausage</li>
-                <li>Chicken</li>
-                <li>Veggie</li>
+                <li class="title" title="weapons">MEAT/TOPPINGS</li>
+                <li title="armed">Pepperoni</li>
+                <li title="knife">Sausage</li>
+                <li title="other">Chicken</li>
+                <li title="no weapon">Veggie</li>
             </ul> 
         </div>
         </>
