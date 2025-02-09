@@ -11,7 +11,9 @@ function Cart() {
     const storedSituation = JSON.parse(sessionStorage.getItem('Situation'));
     const handlePurchase = () =>{
         console.log("submitted");
-        convertMessage();
+        let recipient = "+19547039237";
+        let message = convertMessage();
+        var url = "https://wa.me/" + recipient + "?text=" + message;
     }
     function getCurrentDate() {
         const date = new Date();
