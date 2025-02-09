@@ -1,8 +1,8 @@
 # Project Title: Divine Slice Pizzeria
 
 ## Table of Contents
-
--[Purpose](#purpose)
+ 
+- [Purpose](#purpose)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Pages](#pages)
